@@ -1,20 +1,20 @@
-# OSIsoftの製品のサイレントインストール例のご紹介
+# OSIsoft製品のサイレントインストール例のご紹介
 
 ## 事前
 
-PI Systemの管理者がよく、多くのマシンにPIの製品を自動にのインストールの作業をしたいですが、silent.iniの書き方の資料がすくないため、下記の例を作成いたしました。
+PI Systemの管理者は、多くのマシンにPIの製品をインストールしなくてはならず、多くの場合、自動インストール（サイレントインストール）を利用すると、効率よく作業できます。
+そのサイレントインストールに使用するsilent.iniの書き方は、資料がとても少ないため、今回、その例を作成いたしました。
 
 ## 作業と環境の条件
 
-バッファリングの機能をインストールせずにPI SDK 2016の64ビットのみをサイレントインストールにてインストールします。
+今回はPI Buffer SubsystemはインストールせずにPISDK2016の64ビットのみをサイレントインストールにてインストールします。
 
 環境の条件：
-
-1. PI-TestとPI-Mainという二つPI Data　Archiveがあり、規定サーバーはPI-Mainになり、「Production」というPI-Mainのアリアスがあります。
+1. PI-TestとPI-Mainという二つPI Data　Archiveがあり、規定サーバーはPI-Mainになり、「Production」というPI-Mainの別名があります。
 1. Domainはositestです。
-1. PI Data Archiveとの接続ために5450の規定のポートの利用です。
-1. bufferingの機能をインストールしない。
-1. 事前条件の.Net 4.6がすでにインストールされています。
+1. PI Data Archiveとの接続は5450の規定ポートを利用します。
+1. PI Buffer Subsystemをインストールしない。
+1. 事前条件の.Net 4.6がすでにインストールされているものとします。
 
 ## KST_INI_FILEの準備
 
@@ -36,7 +36,7 @@ NUM = 2
 [PI_PATH]
 1 = PI-Main.ositest.com
 2 = PI-Test.ositest.com
-; ポートを記入したい場合は、[PI_PORT]を使えますが規定の5450のポートの利用しているので、設定の必要がありません。
+; ポートを記入したい場合は、[PI_PORT]を使えますが規定の5450ポートの利用しているので、設定の必要がありません。
 ; 規定のPI Data Archiveは1です。
 [PI_DEFAULT_SERVER]
 １ = TRUE
@@ -83,7 +83,7 @@ setup.exeは、以下のモジュールを使用し、COMMANDLINEの下にリス
 ```
 
 下記の四つのインストーラーではマシンを再起動しないで済むので、
-「REBOOT=Suppress」と「/norestart」のパラメーターを使い、無駄な再起動しないようにインストールします。
+「REBOOT=Suppress」と「/norestart」のパラメーターを使い、無駄な再起動が起きないようにインストールします。
 
 ```ini
 [COMMANDLINE]
@@ -106,15 +106,14 @@ PISDK\_2016\_が展開されたフォルダーにsilent.iniのファイルを入
 
     silent.bat -install
 
-実行した後に、インストーラーの結果が出るので、無事にインストールしたかどうか確認できます。
+実行後、インストーラーの結果が表示されます。
+無事にインストールしたかどうか確認します。
 
 
-### 他の設定
-
-PI SDKに含まれているsilent.iniのファイルに他のインストーラーを設定がありますので、参照になります。
+### 他の製品のサイレントインストール
+PI SDKに含まれているsilent.iniのファイルにはPI Buffer Subsystemなど、他の製品の設定例もあるので、参照になります。
 
 下記のKB（英)もあります。
-
 1. [KB01034 - How to Silently Install OSIsoft Software](https://techsupport.osisoft.com/Troubleshooting/KB/KB01034)
 1. [3044OSI8 - How to perform a silent install of PI ProcessBook](https://techsupport.osisoft.com/Troubleshooting/KB/3044OSI8)
 1. [3045OSI8 - How to perform a silent install of PI DataLink](https://techsupport.osisoft.com/Troubleshooting/KB/3045OSI8)
