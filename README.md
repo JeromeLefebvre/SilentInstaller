@@ -101,7 +101,7 @@ setup.exeは、以下のモジュールを使用し、COMMANDLINEの下にリス
 2 = /q /norestart
 ; 2015 update 2 Runtimes (64-bit)
 3 = /q /norestart
-; PI SDK (64-bit) 
+; PI SDK (64-bit)
 ; KST_INI_FILEのパラメーターはKSTのファイルのフルパスです。
 ; INSTALLDIRは%pihome64%のフォルダーになります。
 4 = ALLUSERS=1 REBOOT=Suppress /qn INSTALLDIR="C:\Program Files\PIPC" IMPORT_KST=1 KST_INI_FILE="c:\kst.ini"
