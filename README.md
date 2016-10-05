@@ -2,13 +2,20 @@
 
 ## 事前
 
-PI Systemの管理者がよく、多くのマシンにPIの製品を自動にのインストールの作業をしたいですが、silent.iniの書き方の資料がすくないため、下記の例を作成いたしました。
+PI Systemの管理者がよく、多くのマシンにPIの製品を自動にのインストールの作業をしたいですが、silent.iniの書き方について混乱するので、下記の例を用意いたしました。
 
 ## 作業と環境の条件
 
-バッファリングの機能をインストールせずにPI SDK 2016の64ビットのみをサイレントインストールにてインストールします。
+### 作業
 
-環境の条件：
+PI SDK 2016を自動にインストールしたいですが、下記の三つの条件があります。
+
+1. バッファリングの機能をインストールしない。
+1. 64ビットのバージョンのみをインストールする。
+1. %pihome64%のフォルダーはc:\PIPC\。
+
+
+### 環境の条件
 
 1. PI-TestとPI-Mainという二つPI Data　Archiveがあり、規定サーバーはPI-Mainになり、「Production」というPI-Mainのアリアスがあります。
 1. Domainはositestです。
@@ -45,11 +52,11 @@ NUM = 2
 1 = Production
 ```
 
-### SILENT.INI
+## SILENT.INI
 
 新規のインストールではSETUPKIT、NUMSETUPMODULES、SETUPMODULES、COMMANDLINEの四つのモジュールがあります。
 
-#### SETUPKIT
+### SETUPKIT
 
 ```ini
 [SETUPKIT]
@@ -99,7 +106,7 @@ setup.exeは、以下のモジュールを使用し、COMMANDLINEの下にリス
 4 = ALLUSERS=1 REBOOT=Suppress /qn INSTALLDIR="C:\Program Files\PIPC" IMPORT_KST=1 KST_INI_FILE="c:\kst.ini"
 ```
 
-### インストーラーを実行します
+## インストーラーを実行します
 
 kst.iniのファイルをKST\_INI\_FILEに保存し、
 PISDK\_2016\_が展開されたフォルダーにsilent.iniのファイルを入れ替え後に、下記のコマンドを実行します。
@@ -109,7 +116,7 @@ PISDK\_2016\_が展開されたフォルダーにsilent.iniのファイルを入
 実行した後に、インストーラーの結果が出るので、無事にインストールしたかどうか確認できます。
 
 
-### 他の設定
+## 他の設定
 
 PI SDKに含まれているsilent.iniのファイルに他のインストーラーを設定がありますので、参照になります。
 
