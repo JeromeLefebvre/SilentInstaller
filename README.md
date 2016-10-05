@@ -71,11 +71,15 @@ SUPPRESSHEADERMESSAGE = TRUE
 SUPPRESSDIALOGS = TRUE
 ```
 
+### NUMSETUPMODULES
+
 ```ini
 [NUMSETUPMODULES]
 ; 下記にモジュールの数
 NUM=4
 ```
+
+### SETUPMODULES
 
 setup.exeは、以下のモジュールを使用し、COMMANDLINEの下にリストされている与えられたパラメータを使用してインストーラーを実行します。
 
@@ -88,6 +92,8 @@ setup.exeは、以下のモジュールを使用し、COMMANDLINEの下にリス
 ;PI SDKの64ビットのインストーラー
 4 = pisdk\PISDK_x64.msi
 ```
+
+### COMMANDLINE
 
 下記の四つのインストーラーではマシンを再起動しないで済むので、
 「REBOOT=Suppress」と「/norestart」のパラメーターを使い、無駄な再起動しないようにインストールします。
