@@ -93,3 +93,8 @@ NUM=4
 ### 他の設定
 
 PI SDKに含まれている
+
+リソース：
+1．https://techsupport.osisoft.com/Troubleshooting/KB/KB01034
+
+２．
