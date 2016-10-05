@@ -55,7 +55,7 @@ NUM = 2
 
 ```ini
 [SETUPKIT]
-;　インストールの表示名前
+; インストールの表示名前
 ; 下記にあるNAMEとDISPLAYNAMEのパラメーターはインストールのログにでます。
 NAME = SetupPISDK
 DISPLAYNAME = PI Software Development Kit (PI SDK) 2016 64 bit
